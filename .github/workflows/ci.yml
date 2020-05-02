@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  lhci_metadata_job:
+    runs-on: ubuntu-latest
+    name: lighthouse ci output json of metadata
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Lighthouse CI
+        id: lhci
+        uses: ./
+      - name: Get the output from Lighthouse CI
+        run: echo '${{ steps.lhci.outputs.metadata }}'

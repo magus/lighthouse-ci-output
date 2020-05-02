@@ -1,0 +1,8 @@
+name: 'Lighthouse CI'
+description: 'Run Lighthouse CI and output metadata'
+outputs:
+  metadata: # id of output
+    description: 'JSON string containing Lighthouse metadata'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
